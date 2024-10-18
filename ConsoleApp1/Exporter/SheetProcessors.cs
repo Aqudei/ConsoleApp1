@@ -42,6 +42,16 @@ namespace ConsoleApp1.Exporter
         public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("boringMethods"));
     }
 
+    public class SheetStratigraphy : SheetProcessorBase, ISheetProcessor
+    {
+        public SheetStratigraphy(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
+        {
+        }
+
+        public string Name => "Stratigraphy";
+
+        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("stratigraphy"));
+    }
     public class SheetDiscontinuities : SheetProcessorBase, ISheetProcessor
     {
         public SheetDiscontinuities(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)

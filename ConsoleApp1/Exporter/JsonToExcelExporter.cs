@@ -46,6 +46,7 @@ namespace ConsoleApp1.Exporter
             processors.Add(new SheetDrillRuns(projectNode, boreholesNode));
             processors.Add(new SheetDiscontinuities(projectNode, boreholesNode));
             processors.Add(new SheetDrillingDetails(projectNode, boreholesNode));
+            processors.Add(new SheetStratigraphy(projectNode, boreholesNode));
 
             var workbook = new XLWorkbook();
 
