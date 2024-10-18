@@ -11,6 +11,6 @@ namespace ConsoleApp1.Exporter
     internal interface ISheetProcessor
     {
         string Name { get;}
-        DataTable Process();
+        DataTable? Process();
     }
 }

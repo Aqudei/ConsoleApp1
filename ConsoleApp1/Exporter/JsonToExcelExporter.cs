@@ -26,22 +26,38 @@ namespace ConsoleApp1.Exporter
 
             var jsonText = File.ReadAllText(InputFile);
             var json = JsonNode.Parse(jsonText);
+            if (json == null)
+            {
+                Console.WriteLine("Cannot parse input file to JSON");
+                return;
+            }
+
             var item = json.AsArray().FirstOrDefault();
 
-            var projectNode = item["project"];
-            var boreholesNode = item["boreholes"];
+            var projectNode = item?["project"];
+            var boreholesNode = item?["boreholes"];
 
-            processors.Add(new ProjectSheet(projectNode,boreholesNode));
+            processors.Add(new SheetProject(projectNode, boreholesNode));
+            processors.Add(new SheetTestHole(projectNode, boreholesNode));
+            processors.Add(new SheetBackFill(projectNode, boreholesNode));
+            processors.Add(new SheetPiezometers(projectNode, boreholesNode));
+            processors.Add(new SheetFieldTests(projectNode, boreholesNode));
+            processors.Add(new SheetComments(projectNode, boreholesNode));
+            processors.Add(new SheetDrillRuns(projectNode, boreholesNode));
+            processors.Add(new SheetDiscontinuities(projectNode, boreholesNode));
+            processors.Add(new SheetDrillingDetails(projectNode, boreholesNode));
 
-
-            var workbook = new XLWorkbook();           
+            var workbook = new XLWorkbook();
 
 
             foreach (var processor in processors)
             {
                 var sheet = processor.Process();
                 var worksheet = workbook.Worksheets.Add(processor.Name);
-                worksheet.Cell(1,1).InsertTable(sheet);
+                if (sheet == null)
+                    continue;
+
+                worksheet.Cell(1, 1).InsertTable(sheet);
             }
             workbook.SaveAs(destination);
         }
