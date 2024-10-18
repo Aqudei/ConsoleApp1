@@ -29,6 +29,7 @@ namespace ConsoleApp1.Exporter
             {
                 if (node.Key == "extraTags")
                 {
+                    HandleExtraTags(item, node);
                     continue;
                 }
 
@@ -43,6 +44,25 @@ namespace ConsoleApp1.Exporter
             result.Add(item);
 
             return ToDataTable(result);
+        }
+
+        private void HandleExtraTags(Dictionary<string, object> item, KeyValuePair<string, JsonNode?> node)
+        {
+            var tags = node.Value.AsArray();
+            foreach (var tag in tags)
+            {
+                var name = tag?["name"]?.ToString();
+                if (name == null || string.IsNullOrEmpty(name))
+                    continue;
+
+                foreach (var n in tag.AsObject())
+                {
+                    if (n.Key == "value")
+                    {
+                        item.Add(name, n.Value);
+                    }
+                }
+            }
         }
 
         private bool ShouldSkipNode(KeyValuePair<string, JsonNode?> node)
