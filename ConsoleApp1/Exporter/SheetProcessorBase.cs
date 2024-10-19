@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1.Exporter
@@ -12,16 +14,23 @@ namespace ConsoleApp1.Exporter
     {
         protected JsonNode? _projectNode;
         protected JsonNode? _boreholesNode;
+        private string? _crsMeasurementUnit;
+        protected string _unit;
 
         protected SheetProcessorBase(JsonNode? projectNode, JsonNode? boreholesNode)
         {
             _projectNode = projectNode;
             _boreholesNode = boreholesNode;
+
+
+            var unitSystem = projectNode?["unitSystem"]?.ToString();
+            _crsMeasurementUnit = projectNode?["crsMeasurementUnit"]?.ToString();
+            _unit = unitSystem != null && unitSystem == "Imperial" ? "ft" : "m";
         }
 
         protected bool ShouldSkipKey(string key)
         {
-            return key.EndsWith("Id") || key == "id";
+            return key.EndsWith("Id") || key == "id"  || string.IsNullOrWhiteSpace(key);
         }
 
         protected List<Dictionary<string, object>> ProcessBoreHolesItems(string arrayKey, string nestedKey = null)
@@ -65,7 +74,7 @@ namespace ConsoleApp1.Exporter
 
             var dataTable = PrepareDataTable(data);
 
-            
+
             // Add rows to the DataTable
             foreach (var dict in data)
             {
@@ -77,7 +86,39 @@ namespace ConsoleApp1.Exporter
                 dataTable.Rows.Add(row);
             }
 
-            return dataTable;
+
+            return PostProcessDataTable(dataTable);
+        }
+
+        private DataTable PostProcessDataTable(DataTable dataTable)
+        {
+            var dt = MoveColumnToFirst(dataTable, "testHole");
+
+            foreach (DataColumn column in dt.Columns)
+            {
+                var newColumnName = AddSpacesToSentence(column.ColumnName);
+                if (newColumnName.EndsWith("Depth"))
+                {
+                    newColumnName = $"{newColumnName} ({_unit})";
+                }
+
+                if (newColumnName.EndsWith("Elev") || newColumnName.EndsWith("Elevation"))
+                {
+                    newColumnName = $"{newColumnName} ({_crsMeasurementUnit})";
+                }
+
+                column.ColumnName = newColumnName;
+            }
+            return dt;
+        }
+
+        private string AddSpacesToSentence(string input)
+        {
+            // Use regular expression to insert spaces before each capital letter
+            string spacedString = Regex.Replace(input, "(\\B[A-Z])", " $1");
+
+            // Capitalize the first letter of the sentence
+            return char.ToUpper(spacedString[0]) + spacedString.Substring(1);
         }
 
         private DataTable PrepareDataTable(List<Dictionary<string, object>> data)
@@ -100,21 +141,16 @@ namespace ConsoleApp1.Exporter
                 dataTable.Columns.Add(column, typeof(object)); // Use object type for flexibility
             }
 
-
-            // Column name to move to first position
-            string columnNameToMove = "testHole";
-
-            // Check if the column exists and move it to the first position
-            if (dataTable.Columns.Contains(columnNameToMove))
-            {
-                dataTable = MoveColumnToFirst(dataTable, columnNameToMove);
-            }
-
             return dataTable;
         }
 
         private DataTable MoveColumnToFirst(DataTable table, string columnName)
         {
+            if (!table.Columns.Contains(columnName))
+            {
+                return table;
+            }
+
             // Create a new DataTable with the desired order
             DataTable newTable = new DataTable();
 

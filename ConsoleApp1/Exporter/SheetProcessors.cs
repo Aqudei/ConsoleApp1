@@ -123,7 +123,7 @@ namespace ConsoleApp1.Exporter
     }
     public class SheetTestHole : SheetProcessorBase, ISheetProcessor
     {
-        public string Name => "Test Hole";
+        public string Name => "Test Holes";
 
         public SheetTestHole(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
         {
@@ -147,12 +147,12 @@ namespace ConsoleApp1.Exporter
                         data["groundwaterElev"] = property.Value["groundwaterElev"];
                     }
 
-                    if (property.Key == "progressStatus")
+                    else if (property.Key == "progressStatus")
                     {
                         data["progressStatus"] = property.Value["name"];
                     }
 
-                    if (property.Key == "completionNotes")
+                    else if (property.Key == "completionNotes")
                     {
                         foreach (var completionNotesNode in property.Value.AsObject())
                         {
@@ -161,7 +161,7 @@ namespace ConsoleApp1.Exporter
                         }
                     }
 
-                    if (property.Key == "sptHammer")
+                    else if (property.Key == "sptHammer")
                     {
                         foreach (var sptHammerNode in property.Value.AsObject())
                         {
@@ -169,20 +169,20 @@ namespace ConsoleApp1.Exporter
                             data[$"SPT{sptHammerNode.Key}"] = sptHammerNode.Value;
                         }
                     }
-
-                    if (property.Value is JsonValue jsonValue)
+                    else
                     {
-                        data[property.Key] = jsonValue;
+                        if (property.Value is JsonValue jsonValue || property.Value is null)
+                        {
+                            if (property.Key == "northing" || property.Key == "easting")
+                            {
+                                data[property.Key] = property.Value.GetValue<int>().ToString("N0");
+                                continue;
+                            }
+                            data[property.Key] = property.Value;
+                        }
                     }
-
-
-                    if (property.Value is null)
-                    {
-                        data[property.Key] = property.Value;
-                    }
-
-
                 }
+
                 items.Add(data);
             }
 
@@ -205,7 +205,7 @@ namespace ConsoleApp1.Exporter
         public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("comments"));
     }
 
-    public class SheetFieldTests : SheetProcessorBase, ISheetProcessor
+    public class SheetFieldTests : SheetProcessorBase
     {
         public SheetFieldTests(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
         {
@@ -213,8 +213,51 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Field Tests";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("fieldTests"));
+        public IEnumerable<DataTable> Process()
+        {
 
+            foreach (var borehole in _boreholesNode.AsArray())
+            {
+                var fieldTests = borehole["fieldTests"];
+                foreach (var field in fieldTests.AsArray())
+                {
+                    var items = new List<Dictionary<string,object>>();
+
+                    var fieldProps = ExtractProperties(field);
+
+                    foreach (var val in field["values"].AsArray())
+                    {
+                        var valueProps = ExtractProperties(val);
+                        var data = new Dictionary<string, object>();
+
+                        foreach (var prop in fieldProps)
+                        {
+                            if (ShouldSkipKey(prop.Key))
+                                continue;
+                            
+                            //if (prop.Key == "testTitle")
+                            //    continue;
+
+                            data[prop.Key] = prop.Value;
+                        }
+
+                        foreach (var prop in valueProps)
+                        {
+                            if (ShouldSkipKey(prop.Key))
+                                continue;
+
+                            data[$"Test {prop.Key}"] = prop.Value;
+                        }
+
+                        items.Add(data);
+                    }
+
+                    var table = ToDataTable(items);
+                    table.TableName = field["testTitle"].ToString();
+                    yield return table;
+                }
+            }
+        }
     }
 
     public class SheetProject : SheetProcessorBase, ISheetProcessor

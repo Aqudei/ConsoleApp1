@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
@@ -41,7 +42,7 @@ namespace ConsoleApp1.Exporter
             processors.Add(new SheetTestHole(projectNode, boreholesNode));
             processors.Add(new SheetBackFill(projectNode, boreholesNode));
             processors.Add(new SheetPiezometers(projectNode, boreholesNode));
-            processors.Add(new SheetFieldTests(projectNode, boreholesNode));
+            //processors.Add(new SheetFieldTests(projectNode, boreholesNode));
             processors.Add(new SheetComments(projectNode, boreholesNode));
             processors.Add(new SheetDrillRuns(projectNode, boreholesNode));
             processors.Add(new SheetDiscontinuities(projectNode, boreholesNode));
@@ -62,6 +63,25 @@ namespace ConsoleApp1.Exporter
                 worksheet.Cell(1, 1).InsertTable(sheet);
                 worksheet.Columns().AdjustToContents();
             }
+
+
+            var fieldTestProc = new SheetFieldTests(projectNode, boreholesNode);
+            var ftTables = fieldTestProc.Process().ToArray();
+            var worksheetFieldTests = workbook.Worksheets.Add("Field Tests");
+            var currentColumn = 1;
+            for (int i = 0; i < ftTables.Count(); i++)
+            {
+                var table = ftTables[i];
+                worksheetFieldTests.Cell(1, currentColumn).InsertTable(table);
+
+                //worksheetFieldTests.Cell(1, currentColumn).Value = table.TableName;
+                //var range = $"{(char)(64 + currentColumn)}1:{(char)(64 + currentColumn+1)}1";
+                //worksheetFieldTests.Range(range).Merge();
+                
+                worksheetFieldTests.Columns().AdjustToContents();
+                currentColumn += table.Columns.Count + 1;
+            }
+
             workbook.SaveAs(destination);
         }
     }
