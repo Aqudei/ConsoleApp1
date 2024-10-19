@@ -74,6 +74,53 @@ namespace ConsoleApp1.Exporter
         public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("drillRuns"));
     }
 
+    public class SheetSamples : SheetProcessorBase, ISheetProcessor
+    {
+        public SheetSamples(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
+        {
+        }
+
+        public string Name => "Samples";
+
+        public DataTable? Process()
+        {
+            var items = new List<Dictionary<string, object>>();
+
+            foreach (var boreHole in _boreholesNode?.AsArray() ?? new JsonArray())
+            {
+                var samples = boreHole?["samples"];
+                var name = boreHole?["name"];
+
+                if (samples == null)
+                    continue;
+
+                foreach (var sample in samples.AsArray())
+                {
+                    var data = ExtractProperties(sample);
+                    data["testHole"] = name;
+
+                    var labTests = sample?["labTests"];
+
+                    foreach (var property in labTests.AsObject())
+                    {
+                        foreach (var item in property.Value.AsArray())
+                        {
+                            var props = ExtractProperties(item);
+                            foreach (var prop in props)
+                            {
+                                if (prop.Value is JsonValue)
+                                    data[prop.Key] = prop.Value;
+                            }
+                        }
+                    }
+
+                    items.Add(data);
+                }
+            }
+
+            return ToDataTable(items);
+        }
+    }
     public class SheetTestHole : SheetProcessorBase, ISheetProcessor
     {
         public string Name => "Test Hole";
@@ -86,10 +133,10 @@ namespace ConsoleApp1.Exporter
         {
             var items = new List<Dictionary<string, object>>();
 
-            foreach (var item in _boreholesNode.AsArray())
+            foreach (var boreHole in _boreholesNode.AsArray())
             {
                 var data = new Dictionary<string, object>();
-                foreach (var property in item.AsObject())
+                foreach (var property in boreHole.AsObject())
                 {
                     if (ShouldSkipKey(property.Key))
                         continue;

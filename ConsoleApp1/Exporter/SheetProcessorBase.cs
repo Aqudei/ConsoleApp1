@@ -28,14 +28,15 @@ namespace ConsoleApp1.Exporter
         {
             var items = new List<Dictionary<string, object>>();
 
-            foreach (var item in _boreholesNode?.AsArray() ?? new JsonArray())
+            foreach (var boreHole in _boreholesNode?.AsArray() ?? new JsonArray())
             {
-                var targetData = string.IsNullOrEmpty(nestedKey) ? item?[arrayKey] : item?[arrayKey]?[nestedKey];
+                var targetData = string.IsNullOrEmpty(nestedKey) ? boreHole?[arrayKey] : boreHole?[arrayKey]?[nestedKey];
                 if (targetData == null) continue;
 
                 foreach (var dataNode in targetData.AsArray())
                 {
                     var data = ExtractProperties(dataNode);
+                    data["testHole"] = boreHole["name"].AsValue();
                     items.Add(data);
                 }
             }
@@ -43,7 +44,7 @@ namespace ConsoleApp1.Exporter
             return items;
         }
 
-        private Dictionary<string, object> ExtractProperties(JsonNode? dataNode)
+        protected Dictionary<string, object> ExtractProperties(JsonNode? dataNode)
         {
             var data = new Dictionary<string, object>();
             foreach (var property in dataNode.AsObject())
@@ -59,17 +60,12 @@ namespace ConsoleApp1.Exporter
 
         protected DataTable ToDataTable(List<Dictionary<string, object>> data)
         {
-            var dataTable = new DataTable();
-
             if (data == null || data.Count == 0)
-                return dataTable;
+                return new DataTable();
 
-            // Add columns to the DataTable based on keys from the first dictionary
-            foreach (var key in data[0].Keys)
-            {
-                dataTable.Columns.Add(key, typeof(object));
-            }
+            var dataTable = PrepareDataTable(data);
 
+            
             // Add rows to the DataTable
             foreach (var dict in data)
             {
@@ -84,5 +80,68 @@ namespace ConsoleApp1.Exporter
             return dataTable;
         }
 
+        private DataTable PrepareDataTable(List<Dictionary<string, object>> data)
+        {
+            var dataTable = new DataTable();
+
+            // Get all unique keys (columns) from the dictionaries
+            HashSet<string> columns = new HashSet<string>();
+            foreach (var dict in data)
+            {
+                foreach (var key in dict.Keys)
+                {
+                    columns.Add(key);
+                }
+            }
+
+            // Create columns for the DataTable
+            foreach (var column in columns)
+            {
+                dataTable.Columns.Add(column, typeof(object)); // Use object type for flexibility
+            }
+
+
+            // Column name to move to first position
+            string columnNameToMove = "testHole";
+
+            // Check if the column exists and move it to the first position
+            if (dataTable.Columns.Contains(columnNameToMove))
+            {
+                dataTable = MoveColumnToFirst(dataTable, columnNameToMove);
+            }
+
+            return dataTable;
+        }
+
+        private DataTable MoveColumnToFirst(DataTable table, string columnName)
+        {
+            // Create a new DataTable with the desired order
+            DataTable newTable = new DataTable();
+
+            // Add the specified column to the new table as the first column
+            newTable.Columns.Add(columnName, table.Columns[columnName].DataType);
+
+            // Add the rest of the columns (excluding the one being moved)
+            foreach (DataColumn column in table.Columns)
+            {
+                if (column.ColumnName != columnName)
+                {
+                    newTable.Columns.Add(column.ColumnName, column.DataType);
+                }
+            }
+
+            // Copy the data row by row
+            foreach (DataRow row in table.Rows)
+            {
+                DataRow newRow = newTable.NewRow();
+                foreach (DataColumn column in table.Columns)
+                {
+                    newRow[column.ColumnName] = row[column.ColumnName];
+                }
+                newTable.Rows.Add(newRow);
+            }
+
+            return newTable;
+        }
     }
 }

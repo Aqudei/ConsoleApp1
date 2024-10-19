@@ -47,6 +47,7 @@ namespace ConsoleApp1.Exporter
             processors.Add(new SheetDiscontinuities(projectNode, boreholesNode));
             processors.Add(new SheetDrillingDetails(projectNode, boreholesNode));
             processors.Add(new SheetStratigraphy(projectNode, boreholesNode));
+            processors.Add(new SheetSamples(projectNode, boreholesNode));
 
             var workbook = new XLWorkbook();
 
@@ -59,6 +60,7 @@ namespace ConsoleApp1.Exporter
                     continue;
 
                 worksheet.Cell(1, 1).InsertTable(sheet);
+                worksheet.Columns().AdjustToContents();
             }
             workbook.SaveAs(destination);
         }
