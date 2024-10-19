@@ -12,7 +12,11 @@ namespace ConsoleApp1.Exporter
     public class SheetPiezometers : SheetProcessorBase, ISheetProcessor
     {
         public SheetPiezometers(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
+        { }
+
+        protected override IEnumerable<string> GetIgnoredProperties()
         {
+            return new[] { "endCapTypeNumber" };
         }
 
         public string Name => "Piezometers";
@@ -50,7 +54,16 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Stratigraphy";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("stratigraphy"));
+
+        protected override IEnumerable<string> GetIgnoredProperties()
+        {
+            return new[] { "dataEntryMode" };
+        }
+
+        public DataTable? Process()
+        {
+            return ToDataTable(ProcessBoreHolesItems("stratigraphy", include: new string[] { "geologicUnit", "classificationSystem" }));
+        }
     }
     public class SheetDiscontinuities : SheetProcessorBase, ISheetProcessor
     {
@@ -71,7 +84,35 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Drill Runs";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("drillRuns"));
+        public DataTable? Process()
+        {
+            var unit = _unitSystem != null && _unitSystem == "Imperial" ? "in" : "cm";
+
+
+            var table = ToDataTable(ProcessBoreHolesItems("drillRuns"));
+
+            foreach (DataColumn col in table.Columns)
+            {
+                if (col.ColumnName.Contains("Rqd Rmu") ||
+                    col.ColumnName.Contains("Rqd Core Length") ||
+                    col.ColumnName.Contains("Rmr") ||
+                    col.ColumnName.Contains("Tcr") ||
+                    col.ColumnName.Contains("Tmr") ||
+                    col.ColumnName.Contains("Scr"))
+                {
+                    col.ColumnName = $"{col.ColumnName} (%)";
+                }
+
+
+                if (col.ColumnName.Contains("Total Core Recovered") ||
+                   col.ColumnName.Contains("Total Length "))
+                {
+                    col.ColumnName = $"{col.ColumnName} ({unit})";
+                }
+            }
+
+            return table;
+        }
     }
 
     public class SheetSamples : SheetProcessorBase, ISheetProcessor
@@ -226,9 +267,11 @@ namespace ConsoleApp1.Exporter
                 var fieldTests = borehole["fieldTests"];
                 foreach (var field in fieldTests.AsArray())
                 {
-                    var items = new List<Dictionary<string,object>>();
+                    var items = new List<Dictionary<string, object>>();
 
                     var fieldProps = ExtractProperties(field);
+                    fieldProps.Remove("depth", out var _);
+                    fieldProps.Remove("columns", out var _);
 
                     foreach (var val in field["values"].AsArray())
                     {
@@ -240,9 +283,7 @@ namespace ConsoleApp1.Exporter
                         {
                             if (ShouldSkipKey(prop.Key))
                                 continue;
-                            
-                            //if (prop.Key == "testTitle")
-                            //    continue;
+
 
                             data[prop.Key] = prop.Value;
                         }
@@ -252,7 +293,7 @@ namespace ConsoleApp1.Exporter
                             if (ShouldSkipKey(prop.Key))
                                 continue;
 
-                            data[$"Test {prop.Key}"] = prop.Value;
+                            data[$"{prop.Key}"] = prop.Value;
                         }
 
                         items.Add(data);

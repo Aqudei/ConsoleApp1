@@ -14,7 +14,8 @@ namespace ConsoleApp1.Exporter
     {
         protected JsonNode? _projectNode;
         protected JsonNode? _boreholesNode;
-        private string? _crsMeasurementUnit;
+        protected string? _unitSystem;
+        protected string? _crsMeasurementUnit;
         protected string _unit;
 
         protected SheetProcessorBase(JsonNode? projectNode, JsonNode? boreholesNode)
@@ -23,17 +24,17 @@ namespace ConsoleApp1.Exporter
             _boreholesNode = boreholesNode;
 
 
-            var unitSystem = projectNode?["unitSystem"]?.ToString();
+            _unitSystem = projectNode?["unitSystem"]?.ToString();
             _crsMeasurementUnit = projectNode?["crsMeasurementUnit"]?.ToString();
-            _unit = unitSystem != null && unitSystem == "Imperial" ? "ft" : "m";
+            _unit = _unitSystem != null && _unitSystem == "Imperial" ? "ft" : "m";
         }
 
         protected bool ShouldSkipKey(string key)
         {
-            return key.EndsWith("Id") || key == "id"  || string.IsNullOrWhiteSpace(key);
+            return key.EndsWith("Id") || key == "id" || string.IsNullOrWhiteSpace(key);
         }
 
-        protected List<Dictionary<string, object>> ProcessBoreHolesItems(string arrayKey, string nestedKey = null)
+        protected List<Dictionary<string, object>> ProcessBoreHolesItems(string arrayKey, string nestedKey = null, IEnumerable<string> include = null)
         {
             var items = new List<Dictionary<string, object>>();
 
@@ -44,16 +45,26 @@ namespace ConsoleApp1.Exporter
 
                 foreach (var dataNode in targetData.AsArray())
                 {
-                    var data = ExtractProperties(dataNode);
+                    var data = ExtractProperties(dataNode, include);
                     data["testHole"] = boreHole["name"].AsValue();
+
+                    foreach (var item in GetIgnoredProperties())
+                    {
+                        data.Remove(item, out var _);
+                    }
+
                     items.Add(data);
                 }
             }
 
             return items;
         }
+        protected virtual IEnumerable<string> GetIgnoredProperties()
+        {
+            return new List<string>();
+        }
 
-        protected Dictionary<string, object> ExtractProperties(JsonNode? dataNode)
+        protected Dictionary<string, object> ExtractProperties(JsonNode? dataNode, IEnumerable<string> include = null)
         {
             var data = new Dictionary<string, object>();
             foreach (var property in dataNode.AsObject())
@@ -62,6 +73,21 @@ namespace ConsoleApp1.Exporter
                 if (property.Value is JsonValue || property.Value is null)
                 {
                     data[property.Key] = property.Value;
+                }
+                else if (property.Value is JsonObject)
+                {
+                    if (include != null && !include.Contains(property.Key))
+                        continue;
+
+                    foreach (var prop in property.Value.AsObject())
+                    {
+                        if (ShouldSkipKey(prop.Key)) continue;
+
+                        if (prop.Value is JsonValue || prop.Value is null)
+                        {
+                            data[prop.Key] = prop.Value;
+                        }
+                    }
                 }
             }
             return data;
