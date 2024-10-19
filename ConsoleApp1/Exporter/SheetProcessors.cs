@@ -97,6 +97,9 @@ namespace ConsoleApp1.Exporter
                 foreach (var sample in samples.AsArray())
                 {
                     var data = ExtractProperties(sample);
+
+                    data.Remove("typeIconUrl", out var _);
+
                     data["testHole"] = name;
 
                     var labTests = sample?["labTests"];
@@ -218,6 +221,8 @@ namespace ConsoleApp1.Exporter
 
             foreach (var borehole in _boreholesNode.AsArray())
             {
+                var testHole = borehole["name"];
+
                 var fieldTests = borehole["fieldTests"];
                 foreach (var field in fieldTests.AsArray())
                 {
@@ -229,6 +234,7 @@ namespace ConsoleApp1.Exporter
                     {
                         var valueProps = ExtractProperties(val);
                         var data = new Dictionary<string, object>();
+                        data["testHole"] = testHole;
 
                         foreach (var prop in fieldProps)
                         {
