@@ -40,48 +40,35 @@ namespace ConsoleApp1.Exporter
 
             processors.Add(new SheetProject(projectNode, boreholesNode));
             processors.Add(new SheetTestHole(projectNode, boreholesNode));
-            processors.Add(new SheetBackFill(projectNode, boreholesNode));
-            processors.Add(new SheetPiezometers(projectNode, boreholesNode));
-            //processors.Add(new SheetFieldTests(projectNode, boreholesNode));
+            processors.Add(new SheetFieldTests(projectNode, boreholesNode));
+            processors.Add(new SheetSamples(projectNode, boreholesNode));
+            processors.Add(new SheetStratigraphy(projectNode, boreholesNode));
             processors.Add(new SheetComments(projectNode, boreholesNode));
+            processors.Add(new SheetDrillingDetails(projectNode, boreholesNode));
             processors.Add(new SheetDrillRuns(projectNode, boreholesNode));
             processors.Add(new SheetDiscontinuities(projectNode, boreholesNode));
-            processors.Add(new SheetDrillingDetails(projectNode, boreholesNode));
-            processors.Add(new SheetStratigraphy(projectNode, boreholesNode));
-            processors.Add(new SheetSamples(projectNode, boreholesNode));
+            processors.Add(new SheetPiezometers(projectNode, boreholesNode));
+            processors.Add(new SheetBackFill(projectNode, boreholesNode));
 
             var workbook = new XLWorkbook();
 
 
             foreach (var processor in processors)
             {
-                var sheet = processor.Process();
                 var worksheet = workbook.Worksheets.Add(processor.Name);
-                if (sheet == null)
-                    continue;
+                var tables = processor.Process().ToArray();
+                var currentColumn = 1;
+                for (int i = 0; i < tables.Count(); i++)
+                {
+                    var table = tables[i];
 
-                worksheet.Cell(1, 1).InsertTable(sheet);
-                worksheet.Columns().AdjustToContents();
+                    worksheet.Cell(1, currentColumn).InsertTable(table);
+                    worksheet.Columns().AdjustToContents();
+                    currentColumn += table.Columns.Count + 1;
+                }
+
+                processor.FormatSheet(worksheet);
             }
-
-
-            var fieldTestProc = new SheetFieldTests(projectNode, boreholesNode);
-            var ftTables = fieldTestProc.Process().ToArray();
-            var worksheetFieldTests = workbook.Worksheets.Add("Field Tests");
-            var currentColumn = 1;
-            for (int i = 0; i < ftTables.Count(); i++)
-            {
-                var table = ftTables[i];
-                worksheetFieldTests.Cell(1, currentColumn).InsertTable(table);
-
-                //worksheetFieldTests.Cell(1, currentColumn).Value = table.TableName;
-                //var range = $"{(char)(64 + currentColumn)}1:{(char)(64 + currentColumn+1)}1";
-                //worksheetFieldTests.Range(range).Merge();
-                
-                worksheetFieldTests.Columns().AdjustToContents();
-                currentColumn += table.Columns.Count + 1;
-            }
-
             workbook.SaveAs(destination);
         }
     }

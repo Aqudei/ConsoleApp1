@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace ConsoleApp1.Exporter
     internal interface ISheetProcessor
     {
         string Name { get;}
-        DataTable? Process();
+
+        void FormatSheet(IXLWorksheet worksheet);
+        IEnumerable<DataTable> Process();
     }
 }

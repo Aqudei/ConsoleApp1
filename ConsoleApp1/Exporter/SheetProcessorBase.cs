@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace ConsoleApp1.Exporter
         protected string? _unitSystem;
         protected string? _crsMeasurementUnit;
         protected string _unit;
+
+        protected virtual Dictionary<string, string>? GetColumnMappings() => null;
 
         protected SheetProcessorBase(JsonNode? projectNode, JsonNode? boreholesNode)
         {
@@ -72,6 +75,7 @@ namespace ConsoleApp1.Exporter
                 if (ShouldSkipKey(property.Key)) continue;
                 if (property.Value is JsonValue || property.Value is null)
                 {
+                    if (GetIgnoredProperties().Contains(property.Key.ToLower())) continue;
                     data[property.Key] = property.Value;
                 }
                 else if (property.Value is JsonObject)
@@ -85,6 +89,7 @@ namespace ConsoleApp1.Exporter
 
                         if (prop.Value is JsonValue || prop.Value is null)
                         {
+                            if (GetIgnoredProperties().Contains(property.Key.ToLower())) continue;
                             data[prop.Key] = prop.Value;
                         }
                     }
@@ -100,7 +105,6 @@ namespace ConsoleApp1.Exporter
 
             var dataTable = PrepareDataTable(data);
 
-
             // Add rows to the DataTable
             foreach (var dict in data)
             {
@@ -112,13 +116,11 @@ namespace ConsoleApp1.Exporter
                 dataTable.Rows.Add(row);
             }
 
-
-            return PostProcessDataTable(dataTable);
+            return ReOrderColumns(PostProcessDataTable(dataTable));
         }
-
-        private DataTable PostProcessDataTable(DataTable dataTable)
+        protected virtual DataTable PostProcessDataTable(DataTable dataTable)
         {
-            var dt = MoveColumnToFirst(dataTable, "testHole");
+            var dt = SetFirstColumn(dataTable, "testHole");
 
             foreach (DataColumn column in dt.Columns)
             {
@@ -133,9 +135,62 @@ namespace ConsoleApp1.Exporter
                     newColumnName = $"{newColumnName} ({_crsMeasurementUnit})";
                 }
 
+                var columnMappings = GetColumnMappings();
+
+                if (columnMappings != null && columnMappings.TryGetValue(newColumnName, out var desiredName))
+                {
+                    newColumnName = desiredName;
+                }
+
                 column.ColumnName = newColumnName;
             }
             return dt;
+        }
+
+
+        protected virtual Dictionary<string, int> GetColumnsOrdering()
+        {
+            return new Dictionary<string, int> { { "Test Hole", 0 }, { "Test Title", 1 }, { "Depth (ft)", 2 }, { "Value", 3 } };
+
+        }
+        protected DataTable ReOrderColumns(DataTable table)
+        {
+            var newTable = new DataTable();
+            // var columns = new Dictionary<string, int> { { "Test Hole", 0 }, { "Test Title", 1 }, { "Depth (ft)", 2 }, { "Value", 3 } };
+
+            // Step 1: Add columns from the dictionary to the new table in the specified order
+            foreach (var column in GetColumnsOrdering().OrderBy(c => c.Value))
+            {
+                if (table.Columns.Contains(column.Key))
+                {
+                    newTable.Columns.Add(column.Key, table.Columns[column.Key].DataType);
+                }
+            }
+
+            // Step 2: Add any remaining columns that are not in the dictionary (in their original order)
+            foreach (DataColumn col in table.Columns)
+            {
+                if (!newTable.Columns.Contains(col.ColumnName))
+                {
+                    newTable.Columns.Add(col.ColumnName, col.DataType);
+                }
+            }
+
+            // Step 3: Copy data from the original table to the new table
+            foreach (DataRow row in table.Rows)
+            {
+                var newRow = newTable.NewRow();
+
+                // Copy values based on matching column names
+                foreach (DataColumn col in newTable.Columns)
+                {
+                    newRow[col.ColumnName] = row[col.ColumnName];
+                }
+
+                newTable.Rows.Add(newRow);
+            }
+
+            return newTable;
         }
 
         private string AddSpacesToSentence(string input)
@@ -153,6 +208,7 @@ namespace ConsoleApp1.Exporter
 
             // Get all unique keys (columns) from the dictionaries
             HashSet<string> columns = new HashSet<string>();
+
             foreach (var dict in data)
             {
                 foreach (var key in dict.Keys)
@@ -170,7 +226,7 @@ namespace ConsoleApp1.Exporter
             return dataTable;
         }
 
-        private DataTable MoveColumnToFirst(DataTable table, string columnName)
+        private DataTable SetFirstColumn(DataTable table, string columnName)
         {
             if (!table.Columns.Contains(columnName))
             {
@@ -178,7 +234,7 @@ namespace ConsoleApp1.Exporter
             }
 
             // Create a new DataTable with the desired order
-            DataTable newTable = new DataTable();
+            var newTable = new DataTable();
 
             // Add the specified column to the new table as the first column
             newTable.Columns.Add(columnName, table.Columns[columnName].DataType);
@@ -204,6 +260,11 @@ namespace ConsoleApp1.Exporter
             }
 
             return newTable;
+        }
+
+        public virtual void FormatSheet(IXLWorksheet worksheet)
+        {
+
         }
     }
 }

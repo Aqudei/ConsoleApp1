@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,8 +22,10 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Piezometers";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("piezometerData", "piezometer"));
-
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("piezometerData", "piezometer"));
+        }
     }
 
     public class SheetBackFill : SheetProcessorBase, ISheetProcessor
@@ -33,7 +36,10 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "BackFill";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("piezometerData", "backfill"));
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("piezometerData", "backfill"));
+        }
     }
     public class SheetDrillingDetails : SheetProcessorBase, ISheetProcessor
     {
@@ -43,14 +49,16 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Drilling Details";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("boringMethods"));
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("boringMethods"));
+        }
     }
 
     public class SheetStratigraphy : SheetProcessorBase, ISheetProcessor
     {
         public SheetStratigraphy(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
-        {
-        }
+        { }
 
         public string Name => "Stratigraphy";
 
@@ -60,9 +68,14 @@ namespace ConsoleApp1.Exporter
             return new[] { "dataEntryMode" };
         }
 
-        public DataTable? Process()
+        protected override Dictionary<string, string>? GetColumnMappings()
         {
-            return ToDataTable(ProcessBoreHolesItems("stratigraphy", include: new string[] { "geologicUnit", "classificationSystem" }));
+            return new Dictionary<string, string> { { "Unit", "Geol. Unit" }, { "Category", "Geol. Category" } };
+        }
+
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("stratigraphy", include: new string[] { "geologicUnit", "classificationSystem" }));
         }
     }
     public class SheetDiscontinuities : SheetProcessorBase, ISheetProcessor
@@ -73,18 +86,25 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Discontinuities";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("discontinuities"));
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("discontinuities"));
+        }
     }
 
     public class SheetDrillRuns : SheetProcessorBase, ISheetProcessor
     {
         public SheetDrillRuns(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
-        {
-        }
+        { }
 
         public string Name => "Drill Runs";
 
-        public DataTable? Process()
+        protected override Dictionary<string, string>? GetColumnMappings()
+        {
+            return new Dictionary<string, string> { { "Total Length", "Total Length of >4 inch Segments" } };
+        }
+
+        public IEnumerable<DataTable> Process()
         {
             var unit = _unitSystem != null && _unitSystem == "Imperial" ? "in" : "cm";
 
@@ -111,7 +131,7 @@ namespace ConsoleApp1.Exporter
                 }
             }
 
-            return table;
+            yield return table;
         }
     }
 
@@ -123,7 +143,12 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Samples";
 
-        public DataTable? Process()
+        protected override Dictionary<string, string>? GetColumnMappings()
+        {
+            return new Dictionary<string, string> { { "Number", "Sample No." } };
+        }
+
+        public IEnumerable<DataTable> Process()
         {
             var items = new List<Dictionary<string, object>>();
 
@@ -162,7 +187,7 @@ namespace ConsoleApp1.Exporter
                 }
             }
 
-            return ToDataTable(items);
+            yield return ToDataTable(items);
         }
     }
     public class SheetTestHole : SheetProcessorBase, ISheetProcessor
@@ -173,7 +198,18 @@ namespace ConsoleApp1.Exporter
         {
         }
 
-        public DataTable? Process()
+        protected override Dictionary<string, int> GetColumnsOrdering()
+        {
+            return new Dictionary<string, int> { 
+                { "Name", 0 }, 
+                { "Test Hole Type", 1 }, 
+                { $"Depth ({_unit})", 2 }, 
+                { $"Groundwater Depth ({_unit})", 3 }, 
+                { $"Groundwater Elev ({_crsMeasurementUnit})", 4 } 
+            };
+        }
+
+        public IEnumerable<DataTable> Process()
         {
             var items = new List<Dictionary<string, object>>();
 
@@ -230,7 +266,7 @@ namespace ConsoleApp1.Exporter
                 items.Add(data);
             }
 
-            return ToDataTable(items);
+            yield return ToDataTable(items);
         }
 
 
@@ -246,19 +282,33 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Comments";
 
-        public DataTable? Process() => ToDataTable(ProcessBoreHolesItems("comments"));
+        public IEnumerable<DataTable> Process()
+        {
+            yield return ToDataTable(ProcessBoreHolesItems("comments"));
+        }
     }
 
-    public class SheetFieldTests : SheetProcessorBase
+    public class SheetFieldTests : SheetProcessorBase, ISheetProcessor
     {
         public SheetFieldTests(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
         {
+        }
+
+        protected override Dictionary<string, int> GetColumnsOrdering()
+        {
+            return new Dictionary<string, int> { { "Test Hole", 0 }, { "Test Title", 1 }, { "Depth (ft)", 2 }, { "Value", 3 } };
+        }
+
+        protected override IEnumerable<string> GetIgnoredProperties()
+        {
+            return new string[] { "action", "summary" };
         }
 
         public string Name => "Field Tests";
 
         public IEnumerable<DataTable> Process()
         {
+            var existingTables = new List<DataTable>();
 
             foreach (var borehole in _boreholesNode.AsArray())
             {
@@ -300,7 +350,25 @@ namespace ConsoleApp1.Exporter
                     }
 
                     var table = ToDataTable(items);
-                    table.TableName = field["testTitle"].ToString();
+                    table.TableName = field["testTitle"]?.ToString();
+
+                    var existingTable = existingTables.FirstOrDefault(t => t.TableName == table.TableName);
+                    if (existingTable != null)
+                    {
+                        foreach (DataRow row in table.Rows)
+                        {
+                            var newRow = existingTable.NewRow();
+                            foreach (DataColumn col in existingTable.Columns)
+                            {
+                                newRow[col.ColumnName] = row[col.ColumnName];
+                            }
+                            existingTable.Rows.Add(newRow);
+                        }
+
+                        continue;
+                    }
+
+                    existingTables.Add(table);
                     yield return table;
                 }
             }
@@ -316,10 +384,10 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Project";
 
-        DataTable? ISheetProcessor.Process()
+        IEnumerable<DataTable> ISheetProcessor.Process()
         {
             if (_projectNode == null)
-                return null;
+                yield break;
 
             var result = new List<Dictionary<string, object>>();
             var item = new Dictionary<string, object>();
@@ -342,25 +410,24 @@ namespace ConsoleApp1.Exporter
 
             result.Add(item);
 
-            return ToDataTable(result);
+            yield return ToDataTable(result);
         }
 
         private void HandleExtraTags(Dictionary<string, object> item, KeyValuePair<string, JsonNode?> node)
         {
-            var tags = node.Value.AsArray();
+            var tags = node.Value?.AsArray();
+            if (tags == null)
+                return;
+
             foreach (var tag in tags)
             {
                 var name = tag?["name"]?.ToString();
                 if (name == null || string.IsNullOrEmpty(name))
                     continue;
 
-                foreach (var n in tag.AsObject())
-                {
-                    if (n.Key == "value")
-                    {
-                        item.Add(name, n.Value);
-                    }
-                }
+                var value = tag?["value"];
+
+                item.Add($"{name}", value);
             }
         }
     }

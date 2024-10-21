@@ -2,7 +2,7 @@
   "profiles": {
     "ConsoleApp1": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\dev\\ConsoleApp1\\Example json file.json\""
+      "commandLineArgs": "\"D:\\_dev\\UpW\\ConsoleApp1\\Example json file.json\""
     }
   }
 }
