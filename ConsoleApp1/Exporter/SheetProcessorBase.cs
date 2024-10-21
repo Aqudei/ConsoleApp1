@@ -19,7 +19,7 @@ namespace ConsoleApp1.Exporter
         protected string? _crsMeasurementUnit;
         protected string _unit;
 
-        protected virtual Dictionary<string, string>? GetColumnMappings() => null;
+        protected virtual Dictionary<string, string>? GetColumnsMapping() => null;
 
         protected SheetProcessorBase(JsonNode? projectNode, JsonNode? boreholesNode)
         {
@@ -31,7 +31,24 @@ namespace ConsoleApp1.Exporter
             _crsMeasurementUnit = projectNode?["crsMeasurementUnit"]?.ToString();
             _unit = _unitSystem != null && _unitSystem == "Imperial" ? "ft" : "m";
         }
+        protected void ResizeAndWrapColumn(IXLWorksheet worksheet, string columnName, double width)
+        {
+            // Find the column number based on the header name (assumes headers are in the first row)
+            var headerRow = worksheet.Row(1);
+            var column = headerRow.Cells().FirstOrDefault(c => c.Value.ToString() == columnName);
 
+            if (column != null)
+            {
+                int columnNumber = column.Address.ColumnNumber;
+
+                // Set the width of the column
+                worksheet.Column(columnNumber).Width = width;
+
+                // Enable text wrapping for the entire column
+                worksheet.Column(columnNumber).Style.Alignment.WrapText = true;
+                worksheet.Row(column.Address.RowNumber).AdjustToContents();
+            }
+        }
         protected bool ShouldSkipKey(string key)
         {
             return key.EndsWith("Id") || key == "id" || string.IsNullOrWhiteSpace(key);
@@ -135,7 +152,7 @@ namespace ConsoleApp1.Exporter
                     newColumnName = $"{newColumnName} ({_crsMeasurementUnit})";
                 }
 
-                var columnMappings = GetColumnMappings();
+                var columnMappings = GetColumnsMapping();
 
                 if (columnMappings != null && columnMappings.TryGetValue(newColumnName, out var desiredName))
                 {
@@ -147,10 +164,9 @@ namespace ConsoleApp1.Exporter
             return dt;
         }
 
-
         protected virtual Dictionary<string, int> GetColumnsOrdering()
         {
-            return new Dictionary<string, int> { { "Test Hole", 0 }, { "Test Title", 1 }, { "Depth (ft)", 2 }, { "Value", 3 } };
+            return new Dictionary<string, int>();
 
         }
         protected DataTable ReOrderColumns(DataTable table)

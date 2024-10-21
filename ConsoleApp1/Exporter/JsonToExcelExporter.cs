@@ -61,12 +61,11 @@ namespace ConsoleApp1.Exporter
                 for (int i = 0; i < tables.Count(); i++)
                 {
                     var table = tables[i];
-
                     worksheet.Cell(1, currentColumn).InsertTable(table);
-                    worksheet.Columns().AdjustToContents();
                     currentColumn += table.Columns.Count + 1;
                 }
 
+                worksheet.Columns().AdjustToContents();
                 processor.FormatSheet(worksheet);
             }
             workbook.SaveAs(destination);

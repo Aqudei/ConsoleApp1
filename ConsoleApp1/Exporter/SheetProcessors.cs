@@ -49,6 +49,11 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Drilling Details";
 
+        public override void FormatSheet(IXLWorksheet worksheet)
+        {
+            ResizeAndWrapColumn(worksheet, "Notes", 50);
+        }
+
         public IEnumerable<DataTable> Process()
         {
             yield return ToDataTable(ProcessBoreHolesItems("boringMethods"));
@@ -62,13 +67,17 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Stratigraphy";
 
+        public override void FormatSheet(IXLWorksheet worksheet)
+        {
+            ResizeAndWrapColumn(worksheet, "Description", 80);
+        }
 
         protected override IEnumerable<string> GetIgnoredProperties()
         {
             return new[] { "dataEntryMode" };
         }
 
-        protected override Dictionary<string, string>? GetColumnMappings()
+        protected override Dictionary<string, string>? GetColumnsMapping()
         {
             return new Dictionary<string, string> { { "Unit", "Geol. Unit" }, { "Category", "Geol. Category" } };
         }
@@ -86,6 +95,13 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Discontinuities";
 
+        public override void FormatSheet(IXLWorksheet worksheet)
+        {
+            ResizeAndWrapColumn(worksheet, "Infill Type", 32);
+            ResizeAndWrapColumn(worksheet, "Infill Character", 32);
+            ResizeAndWrapColumn(worksheet, "Infill Thickness", 32);
+        }
+
         public IEnumerable<DataTable> Process()
         {
             yield return ToDataTable(ProcessBoreHolesItems("discontinuities"));
@@ -99,7 +115,7 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Drill Runs";
 
-        protected override Dictionary<string, string>? GetColumnMappings()
+        protected override Dictionary<string, string>? GetColumnsMapping()
         {
             return new Dictionary<string, string> { { "Total Length", "Total Length of >4 inch Segments" } };
         }
@@ -143,7 +159,7 @@ namespace ConsoleApp1.Exporter
 
         public string Name => "Samples";
 
-        protected override Dictionary<string, string>? GetColumnMappings()
+        protected override Dictionary<string, string>? GetColumnsMapping()
         {
             return new Dictionary<string, string> { { "Number", "Sample No." } };
         }
@@ -198,14 +214,15 @@ namespace ConsoleApp1.Exporter
         {
         }
 
+
         protected override Dictionary<string, int> GetColumnsOrdering()
         {
-            return new Dictionary<string, int> { 
-                { "Name", 0 }, 
-                { "Test Hole Type", 1 }, 
-                { $"Depth ({_unit})", 2 }, 
-                { $"Groundwater Depth ({_unit})", 3 }, 
-                { $"Groundwater Elev ({_crsMeasurementUnit})", 4 } 
+            return new Dictionary<string, int> {
+                { "Name", 0 },
+                { "Test Hole Type", 1 },
+                { $"Depth ({_unit})", 2 },
+                { $"Groundwater Depth ({_unit})", 3 },
+                { $"Groundwater Elev ({_crsMeasurementUnit})", 4 }
             };
         }
 
@@ -278,6 +295,11 @@ namespace ConsoleApp1.Exporter
     {
         public SheetComments(JsonNode? projectNode, JsonNode? boreholesNode) : base(projectNode, boreholesNode)
         {
+        }
+
+        public override void FormatSheet(IXLWorksheet worksheet)
+        {
+            ResizeAndWrapColumn(worksheet, "Description", 50);
         }
 
         public string Name => "Comments";
