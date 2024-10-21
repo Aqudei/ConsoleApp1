@@ -272,7 +272,7 @@ namespace ConsoleApp1.Exporter
                         {
                             if (property.Key == "northing" || property.Key == "easting")
                             {
-                                data[property.Key] = property.Value.GetValue<int>().ToString("N0");
+                                data[property.Key] = property.Value.GetValue<decimal>().ToString("N0");
                                 continue;
                             }
                             data[property.Key] = property.Value;
@@ -340,7 +340,7 @@ namespace ConsoleApp1.Exporter
                 foreach (var field in fieldTests.AsArray())
                 {
                     var items = new List<Dictionary<string, object>>();
-
+                    var columns = field?["columns"]?.ToString().Split(',');
                     var fieldProps = ExtractProperties(field);
                     fieldProps.Remove("depth", out var _);
                     fieldProps.Remove("columns", out var _);
@@ -372,6 +372,16 @@ namespace ConsoleApp1.Exporter
                     }
 
                     var table = ToDataTable(items);
+                    if (columns != null)
+                    {
+                        foreach (var column in columns)
+                        {
+                            if (!table.Columns.Contains(column.Trim()))
+                                table.Columns.Add(column.Trim(), typeof(object));
+                        }
+                    }
+
+
                     table.TableName = field["testTitle"]?.ToString();
 
                     var existingTable = existingTables.FirstOrDefault(t => t.TableName == table.TableName);
