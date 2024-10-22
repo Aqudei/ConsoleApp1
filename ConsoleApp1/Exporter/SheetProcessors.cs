@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
@@ -25,10 +26,32 @@ namespace ConsoleApp1.Exporter
         public IEnumerable<DataTable> Process()
         {
             var backFills = ProcessBoreHolesItems("piezometerData", "backfill");
-            if (backFills == null || backFills.Count <= 0)
-                yield break;
 
-            yield return ToDataTable(ProcessBoreHolesItems("piezometerData", "piezometer"));
+            var piezometer = ProcessBoreHolesItems("piezometerData", "piezometer");
+
+            var filtered = piezometer.Where(p =>
+            {
+                if (p.TryGetValue("testHole", out var piezometerTestHole))
+                {
+                    if (backFills.Any(b =>
+                    {
+                        if (b.TryGetValue("testHole", out var backFillTestHole))
+                        {
+                            var exist = backFillTestHole?.ToString() == piezometerTestHole?.ToString();
+                            return exist;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    })) return true;
+
+                    return false;
+                }
+                return false;
+            });
+
+            yield return ToDataTable(filtered);
         }
     }
 

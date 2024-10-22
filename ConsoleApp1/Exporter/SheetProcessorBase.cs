@@ -112,9 +112,9 @@ namespace ConsoleApp1.Exporter
             return data;
         }
 
-        protected DataTable ToDataTable(List<Dictionary<string, object>> data)
+        protected DataTable ToDataTable(IEnumerable<Dictionary<string, object>> data)
         {
-            if (data == null || data.Count == 0)
+            if (data == null || data.Count() == 0)
                 return new DataTable();
 
             var dataTable = PrepareDataTable(data);
@@ -215,7 +215,7 @@ namespace ConsoleApp1.Exporter
             return char.ToUpper(spacedString[0]) + spacedString.Substring(1);
         }
 
-        private DataTable PrepareDataTable(List<Dictionary<string, object>> data)
+        private DataTable PrepareDataTable(IEnumerable<Dictionary<string, object>> data)
         {
             var dataTable = new DataTable();
 
