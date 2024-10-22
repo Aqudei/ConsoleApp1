@@ -67,12 +67,6 @@ namespace ConsoleApp1.Exporter
                 {
                     var data = ExtractProperties(dataNode, include);
                     data["testHole"] = boreHole["name"].AsValue();
-
-                    foreach (var item in GetIgnoredProperties())
-                    {
-                        data.Remove(item, out var _);
-                    }
-
                     items.Add(data);
                 }
             }
@@ -92,7 +86,9 @@ namespace ConsoleApp1.Exporter
                 if (ShouldSkipKey(property.Key)) continue;
                 if (property.Value is JsonValue || property.Value is null)
                 {
-                    if (GetIgnoredProperties().Contains(property.Key.ToLower())) continue;
+                    if (GetIgnoredProperties().Select(p=>p.ToLower()).Contains(property.Key.ToLower())) 
+                        continue;
+
                     data[property.Key] = property.Value;
                 }
                 else if (property.Value is JsonObject)
@@ -106,7 +102,8 @@ namespace ConsoleApp1.Exporter
 
                         if (prop.Value is JsonValue || prop.Value is null)
                         {
-                            if (GetIgnoredProperties().Contains(property.Key.ToLower())) continue;
+                            if (GetIgnoredProperties().Select(p => p.ToLower()).Contains(property.Key.ToLower()))
+                                continue;
                             data[prop.Key] = prop.Value;
                         }
                     }

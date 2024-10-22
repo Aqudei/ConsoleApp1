@@ -1,0 +1,3071 @@
+[
+    {
+        "project": {
+            "id": "8f91b6f5-165f-96d8-721b-3a14d667d9d6",
+            "title": "GEOTECHNICAL INVESTIGATION AT PUERTO RICO ELECTRIC POWER AUTHORITY SITES",
+            "number": "SB07-24-UT-VAR",
+            "clientName": "Genera PR, LLC",
+            "clientAddress": null,
+            "unitSystem": "Imperial",
+            "unitSystemId": "ff4d854b-423f-4c53-b5f7-2f22ae87b1d4",
+            "address": null,
+            "latitude": 0,
+            "longitude": 0,
+            "easting": 0,
+            "northing": 0,
+            "elevation": 0,
+            "coordinateSystem": "Geographic",
+            "coordinateSystemId": "234e363f-9096-4afc-a95d-4e791f7c190b",
+            "crsTitle": "",
+            "crsMeasurementUnit": "deg",
+            "utmZone": "Q",
+            "utmNumber": "19",
+            "leadEngineer": null,
+            "division": null,
+            "installationDistrict": null,
+            "route": null,
+            "county": null,
+            "postmile": null,
+            "structureName": null,
+            "structureNumber": null,
+            "notes": null,
+            "qrWebLink": null,
+            "totalTestholes": 2,
+            "totalCrossSections": 0,
+            "extraTags": null
+        },
+        "boreholes": [
+            {
+                "samples": [],
+                "fieldTests": [],
+                "comments": [],
+                "stratigraphy": [],
+                "drillRuns": [],
+                "boringMethods": [
+                    {
+                        "id": "5c536970-ee49-d148-8d6d-3a14d66abb91",
+                        "fromDepth": 0,
+                        "toDepth": 20,
+                        "holeDiameter": null,
+                        "casingDiameter": null,
+                        "drillRodInfo": null,
+                        "drillRigModel": null,
+                        "drillBitInfo": null,
+                        "drillRigType": null,
+                        "drillRigTypeId": null,
+                        "drillBitType": null,
+                        "drillBitTypeId": null,
+                        "casingType": null,
+                        "casingTypeId": null,
+                        "drillMethod": "Wash boring",
+                        "drillMethodSymbol": "WB",
+                        "drillMethodId": "7efd2816-1d7d-e7ee-9495-3a05628c445b",
+                        "backfillPattern": "",
+                        "backfillPatternId": null,
+                        "date": null,
+                        "time": null,
+                        "notes": null,
+                        "instrumentInstalled": false
+                    }
+                ],
+                "discontinuities": [],
+                "piezometerData": {
+                    "piezometer": [],
+                    "backfill": []
+                },
+                "drillingGroundwaterLevels": {
+                    "groundwaterDepth": null,
+                    "groundwaterElev": null,
+                    "sealedDepth": null,
+                    "casingDepth": null,
+                    "depthToWater": null,
+                    "groundwaterNotes": null,
+                    "groundwaterDate": null,
+                    "groundwaterTime": null,
+                    "observations": []
+                },
+                "boreholeSurveys": [],
+                "photos": [],
+                "id": "2b9fbb6b-7526-270b-d691-3a14d66abb8f",
+                "name": "Sample",
+                "testHoleType": "Drill Hole",
+                "depth": 20,
+                "latitude": null,
+                "longitude": null,
+                "easting": null,
+                "northing": null,
+                "elevation": null,
+                "elevationSurveyMethod": null,
+                "elevationBenchmark": null,
+                "horizontalSurveyMethod": null,
+                "horizontalSurveyBenchmark": null,
+                "startDate": "9/5/2024",
+                "endDate": "9/5/2024",
+                "contractorName": "AB Drilling",
+                "contractorAddress": null,
+                "loggedBy": "Carlos Rodriguez",
+                "enteredBy": "CFR",
+                "reviewedBy": "CFR",
+                "overburdenThickness": null,
+                "rockDrillDepth": null,
+                "coreBoxes": null,
+                "drillerName": null,
+                "disturbed": null,
+                "undisturbed": null,
+                "holeDrillBitSize": "3.25",
+                "equipment": "CME 55",
+                "trendAzimuth": 0,
+                "plunge": 90,
+                "verticalityType": "SamplePlumbness",
+                "structureName": null,
+                "structureNumber": null,
+                "stationLine": null,
+                "stationNumber": null,
+                "offset": null,
+                "locationDescription": null,
+                "sptHammer": {
+                    "id": "166024-A",
+                    "type": "Automatic",
+                    "drop": "2.5",
+                    "weight": "140",
+                    "energyLevel": 60,
+                    "liftingMechanism": null,
+                    "samplerType": "",
+                    "samplerInnerDia": 0
+                },
+                "completionNotes": {
+                    "start": "Ground Surface",
+                    "termination": "Test Hole Terminated at {depth}"
+                },
+                "progressStatus": {
+                    "id": "d1a174e0-9593-4681-a386-df599537410e",
+                    "name": "Planned",
+                    "color": "#D3D3D3"
+                },
+                "extraTags": null
+            },
+            {
+                "samples": [
+                    {
+                        "id": "9049e6b2-b84f-11e7-e3e1-3a1545e20a14",
+                        "fromDepth": 0,
+                        "toDepth": 2,
+                        "number": "1",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "a7a1ba4f-9a51-7a21-816a-3a1545e221b2",
+                        "fromDepth": 2,
+                        "toDepth": 4,
+                        "number": "2",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "296324fe-886b-eda0-74d3-3a1545e23d1e",
+                        "fromDepth": 4,
+                        "toDepth": 6,
+                        "number": "3",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "747dad5d-0c53-5459-bce9-3a1545e2552c",
+                        "fromDepth": 6,
+                        "toDepth": 8,
+                        "number": "4",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "e6221b9b-fa92-0ed5-9300-3a1545e2709a",
+                        "fromDepth": 8,
+                        "toDepth": 10,
+                        "number": "5",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "956f3bd1-df94-8c8c-7e57-3a1545e29697",
+                        "fromDepth": 10,
+                        "toDepth": 12,
+                        "number": "6",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "50ddd44b-55c5-f308-282d-3a1545e311b1",
+                        "fromDepth": 12,
+                        "toDepth": 14,
+                        "number": "7",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "891a8b89-1576-964c-eb74-3a1545e333e5",
+                        "fromDepth": 14,
+                        "toDepth": 16,
+                        "number": "8",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "e0e651ce-077f-7b18-9668-3a1545e35339",
+                        "fromDepth": 16,
+                        "toDepth": 18,
+                        "number": "9",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "b49c0d2c-02c8-8960-0c6d-3a1545e3706e",
+                        "fromDepth": 18,
+                        "toDepth": 20,
+                        "number": "10",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "448eed86-6765-e6de-a306-3a1545e3a524",
+                        "fromDepth": 23,
+                        "toDepth": 25,
+                        "number": "11",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "7d4f3b57-252a-c0c5-374b-3a1545e3ca92",
+                        "fromDepth": 28,
+                        "toDepth": 30,
+                        "number": "12",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "955552e6-a76f-6f62-2306-3a1545e3e45b",
+                        "fromDepth": 33,
+                        "toDepth": 35,
+                        "number": "13",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "9ffac2a5-0053-808f-548b-3a1545e40906",
+                        "fromDepth": 38,
+                        "toDepth": 40,
+                        "number": "14",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "62055c89-6082-b474-4f29-3a1545e42f61",
+                        "fromDepth": 43,
+                        "toDepth": 45,
+                        "number": "15",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "65c503c1-211f-eea7-73ff-3a1545e47261",
+                        "fromDepth": 48,
+                        "toDepth": 50,
+                        "number": "16",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "eb6cc944-be0c-9047-bcdd-3a1545e48b06",
+                        "fromDepth": 53,
+                        "toDepth": 55,
+                        "number": "17",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "759302af-3453-d6a4-0511-3a1545e4ad2e",
+                        "fromDepth": 58,
+                        "toDepth": 60,
+                        "number": "18",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "f37a6a32-2106-77ab-123b-3a1545e5238a",
+                        "fromDepth": 63,
+                        "toDepth": 65,
+                        "number": "19",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "8b809117-2bdb-eddb-accd-3a1545e56f25",
+                        "fromDepth": 68,
+                        "toDepth": 70,
+                        "number": "20",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "c75ead04-53e9-a039-3f2d-3a1545e59621",
+                        "fromDepth": 73,
+                        "toDepth": 75,
+                        "number": "21",
+                        "typeName": "SPT Sample",
+                        "typeId": "e4d209ad-c183-4a9b-b9ba-171f288e34b6",
+                        "typeIconUrl": "https://ilogweb.blob.core.windows.net/ilog/host/sample-photo/7a4de1d4-6e49-4e26-b653-0cdacf421600.png",
+                        "color": "",
+                        "moistureLevel": null,
+                        "moistureLevelId": null,
+                        "recovery": null,
+                        "rqd": null,
+                        "description": "",
+                        "labTests": {
+                            "indexTests": [
+                                {
+                                    "dryDensity": null,
+                                    "moistureW": null,
+                                    "liquidLimit": null,
+                                    "plasticLimit": null,
+                                    "plasticIndex": null,
+                                    "organicMatter": null,
+                                    "gravel": null,
+                                    "sand": null,
+                                    "silt": null,
+                                    "clay": null,
+                                    "fines200": null,
+                                    "gs": null,
+                                    "soilClass": null
+                                }
+                            ],
+                            "strengthTests": [
+                                {
+                                    "hydraulicConductivityValue": null,
+                                    "hydraulicConductivityTestType": null,
+                                    "vaneShearPeakValueSu": null,
+                                    "vaneShearRemouldedValueSu": null,
+                                    "unconfinedCompression": null,
+                                    "shearC": null,
+                                    "shearPhi": null,
+                                    "shearTestType": null,
+                                    "cc": null,
+                                    "cs": null,
+                                    "pc": null,
+                                    "expansionIndex": null,
+                                    "slackingGrade": null
+                                }
+                            ],
+                            "chemicalTests": [
+                                {
+                                    "ph": null,
+                                    "waterSolubleSulfate": null,
+                                    "totalSulfate": null,
+                                    "waterSolubleChloride": null,
+                                    "totalChloride": null,
+                                    "minResistivity": null
+                                }
+                            ],
+                            "userDefined": [
+                                {
+                                    "qu (tsf)": null,
+                                    "RECOVERY (in)": null
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "fieldTests": [
+                    {
+                        "id": "a62e910c-9985-4d73-b23f-33815542c89a",
+                        "testId": "97cd285e-2351-491b-9462-db336e20ca79",
+                        "testTitle": "Standard Penetration Test (SPT)",
+                        "depth": 0,
+                        "columns": "N60",
+                        "values": [
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=6840d934-991e-46dd-ab9b-2e314b480f37 onchange=\"fieldTestSelectItem(this, '6840d934-991e-46dd-ab9b-2e314b480f37', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "6840d934-991e-46dd-ab9b-2e314b480f37",
+                                "Depth": "5",
+                                "Value": "0",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=18b0a4f1-7174-465b-8982-0fdbd48a3238 onchange=\"fieldTestSelectItem(this, '18b0a4f1-7174-465b-8982-0fdbd48a3238', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "18b0a4f1-7174-465b-8982-0fdbd48a3238",
+                                "Depth": "7",
+                                "Value": "0",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=e880e229-369e-42c6-be77-4a7a6f710723 onchange=\"fieldTestSelectItem(this, 'e880e229-369e-42c6-be77-4a7a6f710723', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "e880e229-369e-42c6-be77-4a7a6f710723",
+                                "Depth": "9",
+                                "Value": "11",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=24613b50-e941-49a6-ba22-eee699292d72 onchange=\"fieldTestSelectItem(this, '24613b50-e941-49a6-ba22-eee699292d72', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "24613b50-e941-49a6-ba22-eee699292d72",
+                                "Depth": "11",
+                                "Value": "34",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=f6403182-e7e3-4ef9-9ed6-61914a6c67d3 onchange=\"fieldTestSelectItem(this, 'f6403182-e7e3-4ef9-9ed6-61914a6c67d3', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "f6403182-e7e3-4ef9-9ed6-61914a6c67d3",
+                                "Depth": "13",
+                                "Value": "21",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=3b23ae03-b8c5-454c-9f95-38f7d973554d onchange=\"fieldTestSelectItem(this, '3b23ae03-b8c5-454c-9f95-38f7d973554d', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "3b23ae03-b8c5-454c-9f95-38f7d973554d",
+                                "Depth": "15",
+                                "Value": "38",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=cf702cb9-05aa-4dfb-8db0-f9237802fa72 onchange=\"fieldTestSelectItem(this, 'cf702cb9-05aa-4dfb-8db0-f9237802fa72', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "cf702cb9-05aa-4dfb-8db0-f9237802fa72",
+                                "Depth": "17",
+                                "Value": "55",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=cc492bf6-8d12-417c-ac7b-290984c81148 onchange=\"fieldTestSelectItem(this, 'cc492bf6-8d12-417c-ac7b-290984c81148', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "cc492bf6-8d12-417c-ac7b-290984c81148",
+                                "Depth": "19",
+                                "Value": "30",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=2ac14481-d424-4479-862d-08d11e046309 onchange=\"fieldTestSelectItem(this, '2ac14481-d424-4479-862d-08d11e046309', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "2ac14481-d424-4479-862d-08d11e046309",
+                                "Depth": "24",
+                                "Value": "31",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=bff5a26a-4ab5-4f26-9501-b9e56750b57a onchange=\"fieldTestSelectItem(this, 'bff5a26a-4ab5-4f26-9501-b9e56750b57a', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "bff5a26a-4ab5-4f26-9501-b9e56750b57a",
+                                "Depth": "29",
+                                "Value": "35",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=2e57dd5c-1086-427f-a38c-8326d5d4c8b3 onchange=\"fieldTestSelectItem(this, '2e57dd5c-1086-427f-a38c-8326d5d4c8b3', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "2e57dd5c-1086-427f-a38c-8326d5d4c8b3",
+                                "Depth": "34",
+                                "Value": "5",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=e5e871f4-bbda-4b99-b320-17a6e2130ab2 onchange=\"fieldTestSelectItem(this, 'e5e871f4-bbda-4b99-b320-17a6e2130ab2', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "e5e871f4-bbda-4b99-b320-17a6e2130ab2",
+                                "Depth": "39",
+                                "Value": "0",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=5df7bc98-cc01-4e4b-8fc2-93f1d4c7e7dc onchange=\"fieldTestSelectItem(this, '5df7bc98-cc01-4e4b-8fc2-93f1d4c7e7dc', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "5df7bc98-cc01-4e4b-8fc2-93f1d4c7e7dc",
+                                "Depth": "44",
+                                "Value": "26",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=4d1c2d06-2faf-4e5e-9995-eeeee8e7dd0c onchange=\"fieldTestSelectItem(this, '4d1c2d06-2faf-4e5e-9995-eeeee8e7dd0c', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "4d1c2d06-2faf-4e5e-9995-eeeee8e7dd0c",
+                                "Depth": "49",
+                                "Value": "24",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=8d69dbea-e8c9-4ca6-a0f8-406967430760 onchange=\"fieldTestSelectItem(this, '8d69dbea-e8c9-4ca6-a0f8-406967430760', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "8d69dbea-e8c9-4ca6-a0f8-406967430760",
+                                "Depth": "54",
+                                "Value": "51",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=84478af9-1756-4c49-bcff-c20d57361b92 onchange=\"fieldTestSelectItem(this, '84478af9-1756-4c49-bcff-c20d57361b92', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "84478af9-1756-4c49-bcff-c20d57361b92",
+                                "Depth": "59",
+                                "Value": "14",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=4ea6d2d5-8cef-4b6c-8cd5-141b97bca2c4 onchange=\"fieldTestSelectItem(this, '4ea6d2d5-8cef-4b6c-8cd5-141b97bca2c4', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "4ea6d2d5-8cef-4b6c-8cd5-141b97bca2c4",
+                                "Depth": "64",
+                                "Value": "21",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class='rslog-checkbox-wrapper'><input id=0589b1a4-f072-4565-bb33-31362e212044 onchange=\"fieldTestSelectItem(this, '0589b1a4-f072-4565-bb33-31362e212044', 'a62e910c-9985-4d73-b23f-33815542c89a')\" type=\"checkbox\"/><div></div></div>",
+                                "id": "0589b1a4-f072-4565-bb33-31362e212044",
+                                "Depth": "69",
+                                "Value": "19",
+                                "N60": "",
+                                "": ""
+                            },
+                            {
+                                "action": "<div class=\"rslog-checkbox-wrapper\"><input id=dd4ccea9-c897-4815-bbdc-043af5ee6841 onchange=\"fieldTestSelectItem(this, dd4ccea9-c897-4815-bbdc-043af5ee6841, a62e910c-9985-4d73-b23f-33815542c89a)\" type=\"checkbox\"/><div></div></div>",
+                                "id": "dd4ccea9-c897-4815-bbdc-043af5ee6841",
+                                "Depth": "74",
+                                "Value": "18",
+                                "N60": "",
+                                "": ""
+                            }
+                        ]
+                    }
+                ],
+                "comments": [],
+                "stratigraphy": [
+                    {
+                        "id": "d8c00229-e5bb-5ed1-e6c3-3a1546b79a7f",
+                        "fromDepth": 0,
+                        "toDepth": 5,
+                        "title": "Fill",
+                        "description": "clayey GRAVEL (GC), mostly fine to coarse, hard, subangular, limestone gravel, some clay, few fine- to medium-grained, moist, reddish-brown",
+                        "soilSymbol": "FL",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "59ca0314-c9f4-4962-913f-edba130e6394",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#FF00FF",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Solid",
+                            "lineStyleId": "1389504d-87d1-4ac0-8ebe-b80420997893",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    },
+                    {
+                        "id": "147bb9d5-693d-1463-312d-3a1546b98e6c",
+                        "fromDepth": 5,
+                        "toDepth": 8,
+                        "title": "Soft organic soil",
+                        "description": "lean CLAY (CL), soft, medium plasticity, organic, moist, dark gray to black",
+                        "soilSymbol": "CL",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "8ae0c622-ac0b-46d9-9fae-d2bc0cb3b35a",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#000000",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Solid",
+                            "lineStyleId": "1389504d-87d1-4ac0-8ebe-b80420997893",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    },
+                    {
+                        "id": "0c18ead0-ec63-6f5c-8de3-3a1546bad35c",
+                        "fromDepth": 8,
+                        "toDepth": 23,
+                        "title": "Alluvium",
+                        "description": "fat CLAY (CH), mostly high plasticity, stiff to very hard, trace fine-grained sand, moist, mottled red, yellow, and light gray",
+                        "soilSymbol": "CH",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "ca540fe7-6798-4014-846f-540ce5b70e65",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#000000",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Dash",
+                            "lineStyleId": "2fd627fa-3578-4b37-8771-500bd518107f",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    },
+                    {
+                        "id": "c14f12cb-a025-8775-973a-3a1546bbeeef",
+                        "fromDepth": 23,
+                        "toDepth": 33,
+                        "title": null,
+                        "description": "sandy fat CLAY (CH), mostly high plasticity, hard, some fine- to medium-grained sand, trace round fine hard gravel, moist, reddish brown",
+                        "soilSymbol": "CH",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "ca540fe7-6798-4014-846f-540ce5b70e65",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#000000",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Dash",
+                            "lineStyleId": "2fd627fa-3578-4b37-8771-500bd518107f",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    },
+                    {
+                        "id": "bf0620c6-4ffa-f3bc-164e-3a1546bdac48",
+                        "fromDepth": 33,
+                        "toDepth": 43,
+                        "title": null,
+                        "description": "clayey SAND (SC), soft to medium, mostly fine- to medium-grained sand, some clay, moist, tan to yellowish brown",
+                        "soilSymbol": "SC",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "928451f6-d378-45ea-93f9-20ce75b68ca4",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#000000",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Solid",
+                            "lineStyleId": "1389504d-87d1-4ac0-8ebe-b80420997893",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    },
+                    {
+                        "id": "305338b5-f600-3f36-eff2-3a1546bf5eac",
+                        "fromDepth": 43,
+                        "toDepth": 75,
+                        "title": "Highly weathered limestone",
+                        "description": "clayey GRAVEL (GC), fine, angular, weathered to hard limestone fragments (broken by sampler), some pockets of clay, some fine- to medium-grained sand, wet, tan to pale yellow",
+                        "soilSymbol": "Limestone",
+                        "agsLegendCode": "",
+                        "soilSymbolId": "0e0399b0-e3d7-412b-b3c3-5ec6c1a908e9",
+                        "agsLegendCodeId": null,
+                        "dataEntryMode": 0,
+                        "geologicUnit": {
+                            "unit": null,
+                            "unitId": null,
+                            "category": null,
+                            "categoryId": null
+                        },
+                        "classificationSystem": {
+                            "selectedSystem": 1,
+                            "classificationDetailsSoil": null,
+                            "classificationDetailsRock": null
+                        },
+                        "general": {
+                            "markAsFill": false,
+                            "unitWeight": 120,
+                            "consistencyDescriptor": "",
+                            "consistencyDescriptorId": null,
+                            "relativeDensity": "",
+                            "relativeDensityId": null,
+                            "moistureDescriptor": null,
+                            "moistureDescriptorId": null,
+                            "structure": null,
+                            "structureId": null,
+                            "colorTermId": null,
+                            "colorTermCode": null,
+                            "colorDescription": null,
+                            "joinerTerm": null,
+                            "joinerTermCode": null,
+                            "foreColor": "#000000",
+                            "backColor": "#ffffff",
+                            "lineColor": "#000000",
+                            "lineStyle": "Solid",
+                            "lineStyleId": "1389504d-87d1-4ac0-8ebe-b80420997893",
+                            "lineThickness": "2) Medium",
+                            "lineThicknessId": "c431dfa5-b81e-4b81-9864-9da94caecf71",
+                            "rockWeatheredToDecomposed": false,
+                            "rockDecomposed": false,
+                            "rockPoorlyIndurated": false,
+                            "grainSizeId": null,
+                            "beddingThicknessId": null,
+                            "slakingId": null,
+                            "grainSize": null,
+                            "beddingThickness": null,
+                            "slaking": null,
+                            "fineContent": "5",
+                            "poorlyIndurated": {
+                                "classificationDetails": null,
+                                "description": null,
+                                "consistencyDescriptor": null,
+                                "consistencyDescriptorId": null,
+                                "relativeDensity": null,
+                                "relativeDensityId": null,
+                                "moistureDescriptor": null,
+                                "moistureDescriptorId": null,
+                                "structure": null,
+                                "structureId": null,
+                                "colorTermId": null,
+                                "colorTermCode": null,
+                                "colorDescription": null,
+                                "joinerTerm": null,
+                                "joinerTermCode": null,
+                                "finesPercent": null,
+                                "finesProportionId": null,
+                                "finesPlasticityId": null,
+                                "finesDryStrengthId": null,
+                                "finesDilatancyId": null,
+                                "finesToughnessId": null,
+                                "sandPercent": null,
+                                "sandProportionId": null,
+                                "sandParticleSizeIds": null,
+                                "sandParticleAngularityId": null,
+                                "sandCementationId": null,
+                                "gravelPercent": null,
+                                "gravelProportionId": null,
+                                "gravelParticleSizeIds": null,
+                                "gravelParticleAngularityId": null,
+                                "gravelCementationId": null,
+                                "gravelParticleShapeId": null,
+                                "cobblesSoilConstituent": null,
+                                "cobblesPercent": null,
+                                "cobblesRockTypeValue": null,
+                                "cobblesSize": null,
+                                "cobblesParticleAngularityId": null,
+                                "cobblesWeatheringId": null,
+                                "cobblesParticleShapeId": null,
+                                "cobblesHardnessId": null,
+                                "bouldersSoilConstituent": null,
+                                "bouldersPercent": null,
+                                "bouldersRockTypeValue": null,
+                                "bouldersSize": null,
+                                "bouldersParticleAngularityId": null,
+                                "bouldersWeatheringId": null,
+                                "bouldersParticleShapeId": null,
+                                "bouldersHardnessId": null,
+                                "finesProportion": null,
+                                "finesPlasticity": null,
+                                "finesDryStrength": null,
+                                "finesDilatancy": null,
+                                "finesToughness": null,
+                                "sandProportion": null,
+                                "sandParticleAngularity": null,
+                                "sandCementation": null,
+                                "gravelProportion": null,
+                                "gravelParticleAngularity": null,
+                                "gravelCementation": null,
+                                "gravelParticleShape": null,
+                                "cobblesRockType": null,
+                                "cobblesParticleAngularity": null,
+                                "cobblesWeathering": null,
+                                "cobblesParticleShape": null,
+                                "cobblesHardness": null,
+                                "bouldersRockType": null,
+                                "bouldersParticleAngularity": null,
+                                "bouldersWeathering": null,
+                                "bouldersParticleShape": null,
+                                "bouldersHardness": null
+                            }
+                        },
+                        "advanced": {
+                            "fractureDensity": null,
+                            "weathering": null,
+                            "hardness": null,
+                            "strength": null,
+                            "fractureDensityId": null,
+                            "weatheringId": null,
+                            "hardnessId": null,
+                            "strengthId": null,
+                            "rockFractureConditions": []
+                        },
+                        "components": {
+                            "finesPercent": null,
+                            "finesProportionId": null,
+                            "finesPlasticityId": null,
+                            "finesDryStrengthId": null,
+                            "finesDilatancyId": null,
+                            "finesToughnessId": null,
+                            "sandPercent": null,
+                            "sandProportionId": null,
+                            "sandParticleSizeIds": null,
+                            "sandParticleAngularityId": null,
+                            "sandCementationId": null,
+                            "gravelPercent": null,
+                            "gravelProportionId": null,
+                            "gravelParticleSizeIds": null,
+                            "gravelParticleAngularityId": null,
+                            "gravelCementationId": null,
+                            "gravelParticleShapeId": null,
+                            "cobblesSoilConstituent": 1,
+                            "cobblesPercent": null,
+                            "cobblesRockTypeValue": null,
+                            "cobblesSize": null,
+                            "cobblesParticleAngularityId": null,
+                            "cobblesWeatheringId": null,
+                            "cobblesParticleShapeId": null,
+                            "cobblesHardnessId": null,
+                            "bouldersSoilConstituent": 1,
+                            "bouldersPercent": null,
+                            "bouldersRockTypeValue": null,
+                            "bouldersSize": null,
+                            "bouldersParticleAngularityId": null,
+                            "bouldersWeatheringId": null,
+                            "bouldersParticleShapeId": null,
+                            "bouldersHardnessId": null,
+                            "finesProportion": null,
+                            "finesPlasticity": null,
+                            "finesDryStrength": null,
+                            "finesDilatancy": null,
+                            "finesToughness": null,
+                            "sandProportion": null,
+                            "sandParticleAngularity": null,
+                            "sandCementation": null,
+                            "gravelProportion": null,
+                            "gravelParticleAngularity": null,
+                            "gravelCementation": null,
+                            "gravelParticleShape": null,
+                            "cobblesRockType": null,
+                            "cobblesParticleAngularity": null,
+                            "cobblesWeathering": null,
+                            "cobblesParticleShape": null,
+                            "cobblesHardness": null,
+                            "bouldersRockType": null,
+                            "bouldersParticleAngularity": null,
+                            "bouldersWeathering": null,
+                            "bouldersParticleShape": null,
+                            "bouldersHardness": null
+                        },
+                        "drillingObservations": {
+                            "depth": true,
+                            "elevation": false,
+                            "observations": []
+                        },
+                        "interimChanges": {
+                            "depth": true,
+                            "elevation": false,
+                            "interimChanges": []
+                        }
+                    }
+                ],
+                "drillRuns": [],
+                "boringMethods": [
+                    {
+                        "id": "b2647fff-9d16-2f5d-637d-3a1545e186c1",
+                        "fromDepth": 0,
+                        "toDepth": 75,
+                        "holeDiameter": null,
+                        "casingDiameter": null,
+                        "drillRodInfo": null,
+                        "drillRigModel": "CME-55",
+                        "drillBitInfo": null,
+                        "drillRigType": null,
+                        "drillRigTypeId": null,
+                        "drillBitType": null,
+                        "drillBitTypeId": null,
+                        "casingType": null,
+                        "casingTypeId": null,
+                        "drillMethod": "Auger (Hollow-Stem)",
+                        "drillMethodSymbol": null,
+                        "drillMethodId": "76f714eb-c2f4-4485-994f-12b207cc0a54",
+                        "backfillPattern": "",
+                        "backfillPatternId": null,
+                        "date": null,
+                        "time": null,
+                        "notes": null,
+                        "instrumentInstalled": false
+                    }
+                ],
+                "discontinuities": [],
+                "piezometerData": {
+                    "piezometer": [],
+                    "backfill": []
+                },
+                "drillingGroundwaterLevels": {
+                    "groundwaterDepth": 9.4,
+                    "groundwaterElev": null,
+                    "sealedDepth": null,
+                    "casingDepth": null,
+                    "depthToWater": null,
+                    "groundwaterNotes": null,
+                    "groundwaterDate": null,
+                    "groundwaterTime": null,
+                    "observations": []
+                },
+                "boreholeSurveys": [],
+                "photos": [],
+                "id": "a327ba18-5615-7aa2-051d-3a1545e186bf",
+                "name": "B-6",
+                "testHoleType": "Drill Hole",
+                "depth": 75,
+                "latitude": 18.446071,
+                "longitude": -66.392317,
+                "easting": 775430.3123044049,
+                "northing": 2041522.4211186934,
+                "elevation": null,
+                "elevationSurveyMethod": null,
+                "elevationBenchmark": null,
+                "horizontalSurveyMethod": null,
+                "horizontalSurveyBenchmark": null,
+                "startDate": "9/23/2024",
+                "endDate": "9/24/2024",
+                "contractorName": "AB Drilling",
+                "contractorAddress": null,
+                "loggedBy": "G. Martínez",
+                "enteredBy": "A. Torres",
+                "reviewedBy": "CERP",
+                "overburdenThickness": null,
+                "rockDrillDepth": null,
+                "coreBoxes": null,
+                "drillerName": null,
+                "disturbed": null,
+                "undisturbed": null,
+                "holeDrillBitSize": null,
+                "equipment": null,
+                "trendAzimuth": 0,
+                "plunge": 90,
+                "verticalityType": "SamplePlumbness",
+                "structureName": null,
+                "structureNumber": null,
+                "stationLine": null,
+                "stationNumber": null,
+                "offset": null,
+                "locationDescription": null,
+                "sptHammer": {
+                    "id": null,
+                    "type": "Automatic",
+                    "drop": "2.5",
+                    "weight": "140",
+                    "energyLevel": 60,
+                    "liftingMechanism": null,
+                    "samplerType": "",
+                    "samplerInnerDia": 0
+                },
+                "completionNotes": {
+                    "start": "Ground Surface",
+                    "termination": "Test Hole Terminated at {depth}"
+                },
+                "progressStatus": {
+                    "id": "337b30b7-82e7-477e-9843-5f12dffe0e7c",
+                    "name": "Completed",
+                    "color": "#00C853"
+                },
+                "extraTags": null
+            }
+        ]
+    }
+]

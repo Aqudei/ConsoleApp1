@@ -24,6 +24,10 @@ namespace ConsoleApp1.Exporter
 
         public IEnumerable<DataTable> Process()
         {
+            var backFills = ProcessBoreHolesItems("piezometerData", "backfill");
+            if (backFills == null || backFills.Count <= 0)
+                yield break;
+
             yield return ToDataTable(ProcessBoreHolesItems("piezometerData", "piezometer"));
         }
     }
@@ -74,7 +78,7 @@ namespace ConsoleApp1.Exporter
 
         protected override IEnumerable<string> GetIgnoredProperties()
         {
-            return new[] { "dataEntryMode" };
+            return new[] { "dataEntryMode", "", "classificationDetailsSoil", "classificationDetailsRock" };
         }
 
         protected override Dictionary<string, string>? GetColumnsMapping()
@@ -164,6 +168,9 @@ namespace ConsoleApp1.Exporter
             return new Dictionary<string, string> { { "Number", "Sample No." } };
         }
 
+
+        protected override IEnumerable<string> GetIgnoredProperties() => new string[] { "typeIconUrl" };
+
         public IEnumerable<DataTable> Process()
         {
             var items = new List<Dictionary<string, object>>();
@@ -180,22 +187,22 @@ namespace ConsoleApp1.Exporter
                 {
                     var data = ExtractProperties(sample);
 
-                    data.Remove("typeIconUrl", out var _);
-
                     data["testHole"] = name;
 
                     var labTests = sample?["labTests"];
 
-                    foreach (var property in labTests.AsObject())
+                    foreach (var labTest in labTests.AsObject())
                     {
-                        foreach (var item in property.Value.AsArray())
+                        foreach (var item in labTest.Value.AsArray())
                         {
                             var props = ExtractProperties(item);
                             foreach (var prop in props)
                             {
-                                if (prop.Value is JsonValue)
+                                if (prop.Value is JsonValue || prop.Value is null)
                                     data[prop.Key] = prop.Value;
                             }
+
+                            break;
                         }
                     }
 
@@ -272,9 +279,20 @@ namespace ConsoleApp1.Exporter
                         {
                             if (property.Key == "northing" || property.Key == "easting")
                             {
-                                data[property.Key] = property.Value.GetValue<decimal>().ToString("N0");
+                                var decimalValue = property.Value?.GetValue<decimal>();
+
+                                if (decimalValue != null && decimalValue.HasValue)
+                                {
+                                    data[property.Key] = decimalValue.Value.ToString("N0");
+                                }
+                                else
+                                {
+                                    data[property.Key] = string.Empty;
+                                }
+
                                 continue;
                             }
+
                             data[property.Key] = property.Value;
                         }
                     }

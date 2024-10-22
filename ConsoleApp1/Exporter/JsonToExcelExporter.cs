@@ -55,12 +55,16 @@ namespace ConsoleApp1.Exporter
 
             foreach (var processor in processors)
             {
-                var worksheet = workbook.Worksheets.Add(processor.Name);
                 var tables = processor.Process().ToArray();
+                var worksheet = workbook.Worksheets.Add(processor.Name);
+
                 var currentColumn = 1;
                 for (int i = 0; i < tables.Count(); i++)
                 {
                     var table = tables[i];
+                    if (table == null || table.Rows.Count <= 0)
+                        continue;
+
                     worksheet.Cell(1, currentColumn).InsertTable(table);
                     currentColumn += table.Columns.Count + 1;
                 }
