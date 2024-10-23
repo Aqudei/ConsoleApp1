@@ -192,6 +192,11 @@ namespace ConsoleApp1.Exporter
             return new Dictionary<string, string> { { "Number", "Sample No." } };
         }
 
+        public override void FormatSheet(IXLWorksheet worksheet)
+        {
+            ResizeAndWrapColumn(worksheet, "Description", 50);
+        }
+
 
         protected override IEnumerable<string> GetIgnoredProperties() => new string[] { "typeIconUrl" };
 
