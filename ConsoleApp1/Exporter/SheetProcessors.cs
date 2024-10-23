@@ -31,9 +31,12 @@ namespace ConsoleApp1.Exporter
 
             var filtered = piezometer.Where(p =>
             {
-                if (p.TryGetValue("testHole", out var piezometerTestHole))
+                if (!p.TryGetValue("testHole", out var piezometerTestHole))
                 {
-                    if (backFills.Any(b =>
+                    return false;
+                }
+
+                if (backFills.Any(b =>
                     {
                         if (b.TryGetValue("testHole", out var backFillTestHole))
                         {
@@ -46,8 +49,6 @@ namespace ConsoleApp1.Exporter
                         }
                     })) return true;
 
-                    return false;
-                }
                 return false;
             });
 
@@ -381,7 +382,6 @@ namespace ConsoleApp1.Exporter
                 foreach (var field in fieldTests.AsArray())
                 {
                     var items = new List<Dictionary<string, object>>();
-                    var columns = field?["columns"]?.ToString().Split(',');
                     var fieldProps = ExtractProperties(field);
                     fieldProps.Remove("depth", out var _);
                     fieldProps.Remove("columns", out var _);
@@ -413,27 +413,20 @@ namespace ConsoleApp1.Exporter
                     }
 
                     var table = ToDataTable(items);
-                    if (columns != null)
-                    {
-                        foreach (var column in columns)
-                        {
-                            if (!table.Columns.Contains(column.Trim()))
-                                table.Columns.Add(column.Trim(), typeof(object));
-                        }
-                    }
-
-
                     table.TableName = field["testTitle"]?.ToString();
 
                     var existingTable = existingTables.FirstOrDefault(t => t.TableName == table.TableName);
                     if (existingTable != null)
                     {
+                        existingTable = MergeColumns(existingTable, table);
+
                         foreach (DataRow row in table.Rows)
                         {
                             var newRow = existingTable.NewRow();
                             foreach (DataColumn col in existingTable.Columns)
                             {
-                                newRow[col.ColumnName] = row[col.ColumnName];
+                                if (table.Columns.Contains(col.ColumnName))
+                                    newRow[col.ColumnName] = row[col.ColumnName];
                             }
                             existingTable.Rows.Add(newRow);
                         }
@@ -445,6 +438,24 @@ namespace ConsoleApp1.Exporter
                     yield return table;
                 }
             }
+        }
+
+        private DataTable MergeColumns(DataTable existingTable, DataTable table)
+        {
+            var newTable = new DataTable();
+
+            foreach (DataColumn col in existingTable.Columns)
+            {
+                if (!newTable.Columns.Contains(col.ColumnName))
+                    newTable.Columns.Add(col.ColumnName, typeof(object));
+            }
+            foreach (DataColumn col in table.Columns)
+            {
+                if (!newTable.Columns.Contains(col.ColumnName))
+                    newTable.Columns.Add(col.ColumnName, typeof(object));
+            }
+
+            return newTable;
         }
     }
 
